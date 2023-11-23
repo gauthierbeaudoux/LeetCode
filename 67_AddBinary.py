@@ -8,4 +8,3 @@ def addBinary(a,b):
 
 
 print(addBinary(a,b))
-
