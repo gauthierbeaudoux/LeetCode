@@ -13,10 +13,7 @@ class Solution:
                 global result
                 result = -1
             else:
-                if abs(root.val-max_node) > result:
-                    result = abs(root.val-max_node)
-                if abs(root.val-min_node) > result:
-                    result = abs(root.val-min_node)
+                result = max(result, abs(root.val-min_node), abs(root.val-max_node))
             max_value(max(root.val, max_node), min(root.val, min_node), root.left)
             max_value(max(root.val, max_node), min(root.val, min_node), root.right)
         
