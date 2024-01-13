@@ -12,7 +12,7 @@ def minSteps(s: str, t: str) -> int:
             result += occurence
         elif occurence > char_s[char]:
             result += occurence - char_s[char]
-
+        
     return result
 
 print(minSteps(s,t))
