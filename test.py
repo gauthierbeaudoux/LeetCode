@@ -7,12 +7,12 @@ food = ["kimchi", "miso", "sushi", "moussaka", "ramen", "bulgogi"]
 
 
 
-test_set = set()
+test = [2,4]
+test2 = [4,2]
+test3 = [4,2]
 
-test_set.add(4)
-test_set.add(6)
-print(test_set)
 
-n = 3
-list_memoire = [['s']*n]*n
-print(list_memoire)
+
+print(hash(tuple(test)))
+print(hash(tuple(test2)))
+print(hash(tuple(test3)))
