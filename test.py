@@ -7,12 +7,9 @@ food = ["kimchi", "miso", "sushi", "moussaka", "ramen", "bulgogi"]
 
 
 
-test = [2,4]
-test2 = [4,2]
-test3 = [4,2]
+test = "pmjghexybyrgzczy"
 
+test2 = "hafcdqbgncrcbihkd"
+i = 1
 
-
-print(hash(tuple(test)))
-print(hash(tuple(test2)))
-print(hash(tuple(test3)))
+print(test ^ test2)
