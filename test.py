@@ -7,8 +7,6 @@ food = ["kimchi", "miso", "sushi", "moussaka", "ramen", "bulgogi"]
 
 
 
-test = {}
+test = [1,2,3,4,5,6]
 
-test[4] = 5
-
-print(test.items())
+print(test[8:8])
