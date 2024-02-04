@@ -6,7 +6,10 @@ L = [["kimchi", "miso", "sushi", "moussaka", "ramen", "bulgogi"],
 food = ["kimchi", "miso", "sushi", "moussaka", "ramen", "bulgogi"]
 
 
+s = "ADOBECODEBANC"
+t = "ABC"
 
-test = [1,2,3,4,5,6]
-
-print(test[8:8])
+for lettre in t:
+    if lettre not in s:
+        print("NON")
+print("fsd")
