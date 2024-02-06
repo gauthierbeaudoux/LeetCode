@@ -6,10 +6,16 @@ L = [["kimchi", "miso", "sushi", "moussaka", "ramen", "bulgogi"],
 food = ["kimchi", "miso", "sushi", "moussaka", "ramen", "bulgogi"]
 
 
-s = "ADOBECODEBANC"
-t = "ABC"
+from collections import Counter, defaultdict
 
-for lettre in t:
-    if lettre not in s:
-        print("NON")
-print("fsd")
+mot1 = 'eat'
+mot2 = 'tea'
+a = defaultdict(list)
+print(a)
+
+a[2] = 3
+print(a)
+
+a[3].append(12)
+
+print(a)
