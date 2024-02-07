@@ -8,14 +8,11 @@ food = ["kimchi", "miso", "sushi", "moussaka", "ramen", "bulgogi"]
 
 from collections import Counter, defaultdict
 
-mot1 = 'eat'
-mot2 = 'tea'
-a = defaultdict(list)
-print(a)
+s = 'tree'
 
-a[2] = 3
-print(a)
+occ_s = Counter(s)
 
-a[3].append(12)
 
-print(a)
+sorted_dic = dict(sorted(occ_s.items(), key=lambda x: -x[1]))
+print(sorted_dic)
+print(''.join([i*j for i,j in sorted_dic.items()]))
