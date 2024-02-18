@@ -8,6 +8,9 @@ food = ["kimchi", "miso", "sushi", "moussaka", "ramen", "bulgogi"]
 
 from collections import Counter, defaultdict
 
-s = 'tree'
+income = {'Anne' : 1111,
+          'Bert' : 2222,
+          'Cara' : 9999999}
 
-print(s[:2])
+print(min(income, key=income.get))
+# Anne
