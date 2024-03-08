@@ -14,3 +14,9 @@ income = {'Anne' : 1111,
 
 print(min(income, key=income.get))
 # Anne
+
+
+nums = [1,2,2,3,1,4]
+occ_nums = Counter(nums)
+print(occ_nums)
+print(max(occ_nums.values()))
