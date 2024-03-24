@@ -19,4 +19,4 @@ print(min(income, key=income.get))
 nums = [1,2,2,3,1,4]
 occ_nums = Counter(nums)
 print(occ_nums)
-print(max(occ_nums.values()))
+print(occ_nums.get(5, 0))
