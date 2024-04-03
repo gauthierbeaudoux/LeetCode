@@ -20,3 +20,10 @@ nums = [1,2,2,3,1,4]
 occ_nums = Counter(nums)
 print(occ_nums)
 print(occ_nums.get(5, 0))
+
+L = [(4,5), (2,3)]
+print(L)
+
+print((4,3) in L)
+
+
