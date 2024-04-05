@@ -26,4 +26,7 @@ print(L)
 
 print((4,3) in L)
 
+print("a" == "A")
+
+
 
