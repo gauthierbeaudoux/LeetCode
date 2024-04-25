@@ -28,5 +28,11 @@ print((4,3) in L)
 
 print("a" == "A")
 
+test = ord('a') - ord('b')
+print(test)
+
+s = "acfgbd"
+
+print(s[6:])
 
 
