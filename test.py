@@ -12,27 +12,9 @@ income = {'Anne' : 1111,
           'Bert' : 2222,
           'Cara' : 9999999}
 
-print(min(income, key=income.get))
-# Anne
-
-
-nums = [1,2,2,3,1,4]
-occ_nums = Counter(nums)
-print(occ_nums)
-print(occ_nums.get(5, 0))
-
-L = [(4,5), (2,3)]
-print(L)
-
-print((4,3) in L)
-
-print("a" == "A")
-
-test = ord('a') - ord('b')
-print(test)
 
 s = "acfgbd"
 
-print(s[6:])
+print(s)
 
 
