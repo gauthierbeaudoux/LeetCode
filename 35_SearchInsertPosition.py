@@ -1,33 +1,25 @@
-nums = [1,3,4,6]
-# target = 5
+nums = [1,3,5,6]
+target = 2
 
-# target = 2
-target = 7
 
 
 def searchInsert(nums: list, target: int) -> int:
-    if target in nums:
-        return nums.index(target)
-    for i in range(len(nums)):
-        if target < nums[i]:
-            return i
-    return len(nums)
-
-
-# Par dichotomie pour O(log(n))
-
-def searchInsert_dicho(nums: list, target: int) -> int:
-    d = 0
-    f = len(nums) - 1
-    while d <= f:
-        milieu = (d + f)//2
-        if nums[milieu] < target:
-            d = milieu + 1
-        elif nums[milieu] > target:
-            f = milieu - 1
+    l = 0
+    r = len(nums)-1
+    
+    while r >= l:
+        print(f"{l = }")
+        print(f"{r = }")
+        m = (r+l)//2
+        if nums[m] == target:
+            return m
+        elif nums[m] > target:
+            r = m-1
+        elif nums[m] < target:
+            l = m+1
         else:
-            return milieu
-    return d
+            print("Erreur")
+    return l
 
 
-print(searchInsert_dicho(nums, target))
+print(searchInsert(nums, target))
