@@ -2,14 +2,15 @@ numsRows = 3
 
 def generate(numRows: int) -> list[list[int]]:
     result = [[1]]
-    if numRows == 1:
-        return result
-    for i in range(1,numRows):
-        list_temp = [1]
-        for j in range(i-1):
-            list_temp.append(result[i-1][j]+result[i-1][j+1])
-        list_temp.append(1)
-        result.append(list_temp)
+    for i in range(2, numRows+1):
+        inter = []
+        for j in range(i):
+            if j == 0 or j == i-1:
+                inter.append(1)
+            else:
+                inter.append(result[i-2][j-1]+result[i-2][j])
+        result.append(inter)
+    
     return result
 
 print(generate(numsRows))
