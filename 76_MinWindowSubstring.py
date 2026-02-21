@@ -1,32 +1,31 @@
-from collections import Counter
+from collections import Counter, defaultdict
 
-s = "ADOBECODEBANC"
-t = "ABC"
 
 def minWindow(s: str, t: str) -> str:
     occ_t = Counter(t)
-    occ_s = Counter(s)
-    if len(t) > len(s):
-        return ""
-    elif len(t) == len(s):
-        for lettre in occ_t.keys():
-            if occ_t[lettre] != occ_s[lettre]:
-                return ""
-        return t
-    else:
-        for lettre in occ_t.keys():
-            if occ_t[lettre] > occ_s[lettre]:
-                return ""
-        result = []
-        for lettre_t in t:
-            nbr_lettre = occ_s[lettre]
-            i = 0
-            for lettre_s in s:
-                if lettre_s == lettre_t:
-                    i += 1
-                    result.append([1])
-                if i == nbr_lettre:
-                    break
+    len_result = len(s)+1 
+    left = 0
+    right = 0
+    result = ""
+    
+    while right < len(s):
+        # print(occ_t)
+        lettre = s[right]
+        if lettre in occ_t.keys():
+            occ_t[lettre] -= 1
+            while max(occ_t.values()) == 0:
+                if right-left < len_result:
+                    len_result = right-left
+                    result = s[left:right+1]  
+                if s[left] in occ_t.keys():
+                    occ_t[s[left]] += 1
+                left += 1
+        
+        right += 1
+        
+    return result
 
 
+s = "ADOBECODEBANC"
+t = "ABC"
 print(minWindow(s,t))
