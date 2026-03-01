@@ -1,27 +1,27 @@
-nums = [2,2,1,1]
 
 def canPartition(nums: list[int]) -> bool:
-    nums.sort()
+    somme = sum(nums)
     
-    a = 0
-    b = len(nums)
+    if somme % 2 == 1:
+        return False
     
-    i = (a+b)//2
-    
-    while True:
-        print(i)
-        if sum(nums[:i]) == sum(nums[i:]):
+    memo = dict()
+    def dfs(i, target):
+        if target == 0:
             return True
-        elif sum(nums[:i]) < sum(nums[i:]):
-            if a == i:
-                return False
-            a = i
-        else:
-            if b == i:
-                return False
-            b = i
-        i = (a+b)//2
+        if i >= len(nums) or target < 0:
+            return False
+        if nums[i] == target:
+            return True
+        
+        if target in memo:
+            return memo[target]
+        
+        memo[target] = dfs(i+1, target - nums[i]) or dfs(i+1, target)
+        return memo[target]
+        
 
-    
+    return dfs(0, somme//2)
 
+nums = [3,3,6,8,16,16,16,18,20]
 print(canPartition(nums))
